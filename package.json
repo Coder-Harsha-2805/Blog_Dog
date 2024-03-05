@@ -1,13 +1,13 @@
 {
-  "name": "blog-dog",
+  "name": "blog-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple blog application using NodeJS, ExpressJs and MongoDb",
   "main": "index.js",
   "scripts": {
-    "dev":"nodemon app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
-  "author": "Harsha",
+  "author": "Harsha Rashmi",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -18,9 +18,10 @@
     "method-override": "^3.0.0",
     "mongodb": "^3.6.2",
     "mongoose": "^5.10.9",
-    "passport": "^0.7.0",
+    "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^6.0.1"
+    "passport-local-mongoose": "^6.0.1",
+    "run": "^1.5.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"

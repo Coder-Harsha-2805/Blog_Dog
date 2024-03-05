@@ -11,6 +11,8 @@ var postSchema = mongoose.Schema({
     },
     username: String,
   },
+
+  //har comment apne object id se referenced hai
   comments: [
     {
       type: mongoose.Schema.Types.ObjectId,

@@ -1,3 +1,4 @@
+
 const express = require("express");
 const router = express.Router({ mergeParams: true });
 const Post = require("../models/post");
@@ -14,6 +15,19 @@ router.get("/new", middleware.isLoggedIn, (req, res) => {
     }
   });
 });
+
+// console.log("Before router.get callback");
+// router.get("/new", middleware.isLoggedIn, (req, res) => {
+//   //Find Post by ID
+//   Post.findById(req.params.id, (err, post) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       res.render("comments/new", { post: post });
+//     }
+//   });
+// });
+// console.log("After router.get callback");
 
 router.post("/", middleware.isLoggedIn, (req, res) => {
   //lookup for post using id

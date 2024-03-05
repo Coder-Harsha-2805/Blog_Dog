@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
-
-var commentSchema = mongoose.Schema({
+//mongoose is object data modelling(ODM) library
+//definekar rahe hai hum current model ka schema
+var commentSchema = mongoose.Schema({            //commentschem ais the name of comment ka joh object type banaya hai
   text: String,
   author: {
     id: {

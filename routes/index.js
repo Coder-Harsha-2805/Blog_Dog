@@ -26,6 +26,7 @@ router.post("/register", (req, res) => {
   });
 });
 
+
 // show login form
 router.get("/login", (req, res) => {
   res.render("login");
@@ -42,13 +43,13 @@ router.post(
   (req, res) => {}
 );
 
-//logic route
+//logout route logic to destroy current sessions
 router.get("/logout", (req, res,next) => {
-  req.logout(function(err) {
-    if (err) { return next(err); }
-    res.redirect('/');
-  });
+ req.session.destroy(function (err){
+  res.redirect("/");
+ });
 });
+
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
@@ -58,3 +59,7 @@ function isLoggedIn(req, res, next) {
 }
 
 module.exports = router;
+
+
+//jab form se data enter karate hai tab humlog req.body.nameofparameter lete hai
+//jab url ke data ka use karna hota hai tab humlog req.params.nameofparameter lete hai

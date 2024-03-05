@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
       console.log(err);
     } else {
       res.render("posts/index", {
-        posts: allposts.reverse(),
+        posts: allposts.reverse(),  //taaki last added post pehle dikhe
         currentUser: req.user,
       });
     }
@@ -36,7 +36,7 @@ router.post("/", middleware.isLoggedIn, (req, res) => {
     author: author,
   };
   //Save to database
-  Post.create(newPost, (err, newlyCreated) => {
+  Post.create(newPost, (err, newlyCreated) => { //This method is part of Mongoose, which is an Object Data Modeling (ODM) library for MongoDB and Node.js.
     if (err) {
       console.log("Error in inserting into DB");
     } else {
